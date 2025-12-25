@@ -23,13 +23,15 @@ winget install --id Microsoft.WindowsTerminal -e
 winget install --id Microsoft.PowerShell -e
 
 2. Version Control
+```powershell
 winget install --id Git.Git -e
 
 3. Code Editor
+```powershell
 winget install --id Microsoft.VisualStudioCode -e
 
 4. Node Version Manager (ห้ามลง Node.js ตรงๆ!)
-```javascript
+```powershell
 winget install --id CoreyButler.NVMforWindows -e
 ```
 
