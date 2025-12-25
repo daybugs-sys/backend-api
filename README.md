@@ -1,2 +1,43 @@
-# ฺ Backend-api
-RESTful API service for EPC Management System using Express.js, TypeScript, and TypeORM (MSSQL).
+# 🛠️ Development Environment Setup Guide
+**Project:** EPC Management Platform  
+**OS Requirement:** Windows 10 (Version 2004+) or Windows 11
+
+เอกสารนี้จัดทำขึ้นเพื่อเป็นมาตรฐานในการเตรียมเครื่องสำหรับ Developer ทุกคนในทีม เพื่อลดปัญหา *"It works on my machine"* และเพื่อให้มั่นใจว่า Environment ของทุกคนตรงกันก่อนเริ่มเขียน Code
+
+---
+
+## 📋 ขั้นตอนที่ 1: เตรียม Package Manager (Winget)
+เราจะใช้ **Winget** (Windows Package Manager) ในการติดตั้งโปรแกรม เพื่อความรวดเร็วและเป็นมาตรฐานเดียวกัน
+
+1. เปิด **Microsoft Store**
+2. ค้นหา **"App Installer"**
+3. คลิก **Update** (ถ้ามี) เพื่อให้มั่นใจว่าเป็นเวอร์ชันล่าสุด
+4. เปิด **Command Prompt** หรือ **PowerShell** แล้วพิมพ์คำสั่งเช็คเวอร์ชัน:
+   ```powershell
+   winget --version
+   
+## 🚀 ขั้นตอนที่ 2: ติดตั้ง Tools พื้นฐาน (Batch Install)
+เราจะไม่ลงโปรแกรมทีละตัว ให้เปิด PowerShell ในโหมด Administrator (คลิกขวา -> Run as administrator) แล้วรันคำสั่งชุดนี้ทีเดียว:
+# 1. Terminal & Shell ที่ดีกว่าเดิม
+winget install --id Microsoft.WindowsTerminal -e
+winget install --id Microsoft.PowerShell -e
+
+# 2. Version Control
+winget install --id Git.Git -e
+
+# 3. Code Editor
+winget install --id Microsoft.VisualStudioCode -e
+
+# 4. Node Version Manager (ห้ามลง Node.js ตรงๆ!)
+winget install --id CoreyButler.NVMforWindows -e
+
+# 5. Container Platform (สำหรับ Database MSSQL/Redis)
+winget install --id Docker.DockerDesktop -e
+
+# 6. Fonts (เพื่อให้อ่าน Code ง่ายและรองรับ Ligatures)
+winget install --id JanDeDobbeleer.OhMyPosh -e
+winget install --id Agl.CascadiaCode -e
+
+**Note: ระหว่างการติดตั้ง หน้าจออาจจะกะพริบหรือขอให้กดยืนยัน (Y) ให้ดำเนินการตามขั้นตอนจนครบทุกตัว**
+
+## ⚡ ขั้นตอนที่ 3: Setup Node.js (ผ่าน NVM)
