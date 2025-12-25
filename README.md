@@ -18,23 +18,23 @@
    
 ## 🚀 ขั้นตอนที่ 2: ติดตั้ง Tools พื้นฐาน (Batch Install)
 เราจะไม่ลงโปรแกรมทีละตัว ให้เปิด PowerShell ในโหมด Administrator (คลิกขวา -> Run as administrator) แล้วรันคำสั่งชุดนี้ทีเดียว:
-# 1. Terminal & Shell ที่ดีกว่าเดิม
+1. Terminal & Shell ที่ดีกว่าเดิม
 winget install --id Microsoft.WindowsTerminal -e
 winget install --id Microsoft.PowerShell -e
 
-# 2. Version Control
+2. Version Control
 winget install --id Git.Git -e
 
-# 3. Code Editor
+3. Code Editor
 winget install --id Microsoft.VisualStudioCode -e
 
-# 4. Node Version Manager (ห้ามลง Node.js ตรงๆ!)
+4. Node Version Manager (ห้ามลง Node.js ตรงๆ!)
 winget install --id CoreyButler.NVMforWindows -e
 
-# 5. Container Platform (สำหรับ Database MSSQL/Redis)
+5. Container Platform (สำหรับ Database MSSQL/Redis)
 winget install --id Docker.DockerDesktop -e
 
-# 6. Fonts (เพื่อให้อ่าน Code ง่ายและรองรับ Ligatures)
+6. Fonts (เพื่อให้อ่าน Code ง่ายและรองรับ Ligatures)
 winget install --id JanDeDobbeleer.OhMyPosh -e
 winget install --id Agl.CascadiaCode -e
 
