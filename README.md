@@ -29,7 +29,9 @@ winget install --id Git.Git -e
 winget install --id Microsoft.VisualStudioCode -e
 
 4. Node Version Manager (ห้ามลง Node.js ตรงๆ!)
+```javascript
 winget install --id CoreyButler.NVMforWindows -e
+```
 
 5. Container Platform (สำหรับ Database MSSQL/Redis)
 winget install --id Docker.DockerDesktop -e
