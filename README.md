@@ -18,26 +18,60 @@
    
 ## 🚀 ขั้นตอนที่ 2: ติดตั้ง Tools พื้นฐาน (Batch Install)
 เราจะไม่ลงโปรแกรมทีละตัว ให้เปิด PowerShell ในโหมด Administrator (คลิกขวา -> Run as administrator) แล้วรันคำสั่งชุดนี้ทีเดียว:
-# 1. Terminal & Shell ที่ดีกว่าเดิม
+1. Terminal & Shell ที่ดีกว่าเดิม
 winget install --id Microsoft.WindowsTerminal -e
 winget install --id Microsoft.PowerShell -e
 
-# 2. Version Control
+2. Version Control
+```powershell
 winget install --id Git.Git -e
-
-# 3. Code Editor
+```
+3. Code Editor
+```powershell
 winget install --id Microsoft.VisualStudioCode -e
+```
 
-# 4. Node Version Manager (ห้ามลง Node.js ตรงๆ!)
+4. Node Version Manager (ห้ามลง Node.js ตรงๆ!)
+```powershell
 winget install --id CoreyButler.NVMforWindows -e
-
-# 5. Container Platform (สำหรับ Database MSSQL/Redis)
+```
+5. Container Platform (สำหรับ Database MSSQL/Redis)
+```powershell
 winget install --id Docker.DockerDesktop -e
+```
 
-# 6. Fonts (เพื่อให้อ่าน Code ง่ายและรองรับ Ligatures)
+7. Fonts (เพื่อให้อ่าน Code ง่ายและรองรับ Ligatures)
+```powershell
 winget install --id JanDeDobbeleer.OhMyPosh -e
 winget install --id Agl.CascadiaCode -e
+```
 
 **Note: ระหว่างการติดตั้ง หน้าจออาจจะกะพริบหรือขอให้กดยืนยัน (Y) ให้ดำเนินการตามขั้นตอนจนครบทุกตัว**
 
 ## ⚡ ขั้นตอนที่ 3: Setup Node.js (ผ่าน NVM)
+
+
+
+
+
+---
+
+## ❓ Troubleshooting (ปัญหาที่พบบ่อยและวิธีแก้ไข)
+
+หากทำตามขั้นตอนแล้วติด Error แดงเถือก ไม่ต้องตกใจ ให้ลองเช็คเคสเหล่านี้ดูครับ
+
+### 1. 🔴 Error: "winget : The term 'winget' is not recognized..."
+**อาการ:** พิมพ์คำสั่ง winget แล้วเครื่องบอกว่าไม่รู้จัก
+**สาเหตุ:** Windows App Installer ยังไม่อัปเดต หรือ Path ยังไม่ถูกโหลด
+**วิธีแก้:**
+1. ไปที่ Microsoft Store > Library > กด **Update** ที่ "App Installer"
+2. ปิด PowerShell แล้วเปิดใหม่
+3. ถ้ายังไม่ได้ ให้ลอง Restart เครื่อง 1 รอบ
+
+### 2. 🔴 Error: "Running scripts is disabled on this system"
+**อาการ:** พิมพ์คำสั่ง NVM หรือ Script อื่นๆ แล้วโดนบล็อก
+**สาเหตุ:** Security Policy ของ PowerShell บล็อกการรันสคริปต์ภายนอก
+**วิธีแก้:**
+เปิด PowerShell (Run as Administrator) แล้วรันคำสั่ง:
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
